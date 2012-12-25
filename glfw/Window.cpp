@@ -93,6 +93,11 @@ void glfwWindow::setWindowTitle(const std::string& title)
   glfwSetWindowTitle(title.c_str());
 }
 
+void glfwWindow::writeText(const std::string& text, const float x, const float y, const float z)
+{
+  #warning Not implemented yet!
+}
+
 void glfwWindow::swapBuffers()
 {
   glfwSwapBuffers();

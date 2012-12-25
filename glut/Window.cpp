@@ -83,6 +83,19 @@ void glutWindow::setWindowTitle(const std::string& title)
   glutSetWindowTitle(title.c_str());
 }
 
+void glutWindow::writeText(const std::string& text, const float x, const float y, const float z)
+{
+  glutSetWindow(m_glutWindowID);
+  glRasterPos3f(x, y, z);
+  const std::string::size_type len = text.length();
+  unsigned int i;
+  for (i=0; i<len; ++i)
+  {
+    if (text[i]>=32) /* and (text[i] <=127)*/
+      glutBitmapCharacter(GLUT_BITMAP_8_BY_13, text[i]);
+  }
+}
+
 void glutWindow::swapBuffers()
 {
   glutSetWindow(m_glutWindowID);

@@ -76,6 +76,14 @@ class glfwWindow: public Window
     /* sets the title of the current window */
     virtual void setWindowTitle(const std::string& title);
 
+    /* writes a text to the given position
+
+       parameters:
+           text    - the text
+           x, y, z - coordinates of the text location
+    */
+    virtual void writeText(const std::string& text, const float x, const float y, const float z);
+
     /* swap front and back buffers */
     virtual void swapBuffers();
   private:
